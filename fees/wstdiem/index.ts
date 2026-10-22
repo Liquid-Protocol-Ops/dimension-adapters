@@ -111,7 +111,7 @@ const fetch = async (options: FetchOptions): Promise<FetchResultV2> => {
 
 const methodology = {
   Fees: "Venice inference yield earned by the DIEM the vault stakes (inference credit sold for USDC and swapped back to DIEM by the venue adapters, then credited via creditDIEM and creditWstDIEM), plus deposit fees.",
-  Revenue: "Adapter operator fee (10% until 2026-07-16, then 5%; owner-set, being lowered to 0%), 5% yield fee on every creditDIEM, and the deposit fee (2.5% until 2026-10-22, then 0.05%), all paid to the protocol as wstDIEM.",
+  Revenue: "Adapter operator fee (10% until 2026-07-16, 5% until 2026-10-22, 0% since), 5% yield fee on every creditDIEM, and the deposit fee (2.5% until 2026-10-22, then 0.05%), all paid to the protocol as wstDIEM.",
   ProtocolRevenue: "Same as revenue: everything retained by the protocol treasury / Safe-owned adapters.",
   SupplySideRevenue: "Inference yield that reaches wstDIEM holders through a higher share price (creditDIEM net of the 5% yield fee).",
 };
@@ -122,7 +122,7 @@ const breakdownMethodology = {
     [LABELS.DEPOSIT_FEES]: "Deposit fee minted to the treasury as wstDIEM on each deposit (2.5% until 2026-10-22, then 0.05%).",
   },
   Revenue: {
-    [LABELS.OPERATOR_FEE]: "Operator leg credited as wstDIEM to the Safe-owned venue adapter (operatorFeeBps: 10% until 2026-07-16, then 5%).",
+    [LABELS.OPERATOR_FEE]: "Operator leg credited as wstDIEM to the Safe-owned venue adapter (operatorFeeBps: 10% until 2026-07-16, 5% until 2026-10-22 20:39 UTC, 0% since).",
     [LABELS.YIELD_FEE]: "5% of every creditDIEM, minted to the treasury as wstDIEM (yieldFeeBps = 500).",
     [LABELS.DEPOSIT_FEES_TO_TREASURY]: "Deposit fee minted to the treasury as wstDIEM.",
   },
